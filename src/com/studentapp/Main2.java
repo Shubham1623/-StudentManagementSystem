@@ -1,6 +1,8 @@
 package com.studentapp;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main2 {
@@ -34,6 +36,25 @@ public class Main2 {
 
         Student result = findStudentById("S-2");
         System.out.println("Result " + result);
+
+        sortByName();
+    }
+
+    private static void sortByName() {
+        //below is the actual implementation
+//        Comparator<Student> studentNameComparator= new Comparator<Student>() {
+//            @Override
+//            public int compare(Student o1, Student o2) {
+//                return o1.getName().compareTo(o2.getName());
+//            }
+//        };
+
+        //and below is by lambda expression
+
+        Comparator<Student> studentNameComparator = (o1,o2)->o1.getName().compareTo(o2.getName());
+
+        Collections.sort(studentList,studentNameComparator);
+        System.out.println(studentList);
     }
 
     public static Student findStudentById(String studentId) {
