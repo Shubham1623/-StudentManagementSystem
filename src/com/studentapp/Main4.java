@@ -23,7 +23,10 @@ public class Main4 {
             System.out.println("4. List Student Information in Sorted Order");
             System.out.println("5. Exit");
             int option = scanner.nextInt();
-
+            scanner.nextLine(); // When we mix next() / nextInt() with nextLine(), we may get empty input.
+            //nextInt() reads input
+            //Enter (\n) remains in buffer
+            //nextLine() immediately consumes that newline...so when calling enrollStudent ...studentName this will not break
             switch (option) {
                 case 1:
                     enrollStudent(scanner);
@@ -64,8 +67,7 @@ public class Main4 {
 
     private static void enrollStudent(Scanner scanner) {
         System.out.println("Enter Student Name");
-        String studentName = scanner.next();
-
+        String studentName = scanner.nextLine();
         System.out.println("Enter Student Age");
         int studentAge = scanner.nextInt();
 
