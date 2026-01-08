@@ -14,7 +14,7 @@ public class Main {
         // pointing to the actual Student object that will be created in the heap memory.
         // Initially, 's1' contains null (default value for reference types) until an object is assigned.
         Student s1;
-        
+
         // Object instantiation process (RHS = Right Hand Side):
         // 1. JVM evaluates the RHS expression first: new Student("Shubham Aggarwal ", 32, "S23-1")
         // 2. If Student class is not already loaded, JVM loads the Student.class file into the Method Area
@@ -24,13 +24,13 @@ public class Main {
         // 6. Constructor execution: Validates inputs, initializes instance variables, creates ArrayList for courses
         // 7. Reference assignment: The memory address of the created object is assigned to 's1' in stack memory
         s1 = new Student("Shubham Aggarwal ", 32, "S23-1");
-        
+
         // Method calls: Each enrollCourse() call is added to the stack as a new stack frame.
         // The method validates the course name and adds it to the courses ArrayList if valid and not already present.
         s1.enrollCourse("Java");
         s1.enrollCourse("Test");
         s1.enrollCourse("python");
-        
+
         // toString() method: When printing an object, Java automatically calls the toString() method.
         // If not overridden, it would print the class name and hash code. Since Student overrides toString(),
         // it prints formatted student information (name, age, studentId, courses).

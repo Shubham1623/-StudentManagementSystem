@@ -51,9 +51,8 @@ public class Main2 {
 
         //and below is by lambda expression
 
-        Comparator<Student> studentNameComparator = (o1,o2)->o1.getName().compareTo(o2.getName());
-
-        Collections.sort(studentList,studentNameComparator);
+        Comparator<Student> studentNameComparator = (o1, o2) -> o1.getName().compareTo(o2.getName());
+        Collections.sort(studentList, studentNameComparator);
         System.out.println(studentList);
     }
 
@@ -65,10 +64,8 @@ public class Main2 {
                     .filter(x -> x.getStudentId().equalsIgnoreCase(studentId))
                     .findFirst()
                     .orElseThrow(() -> new RuntimeException("No Data Found!!!"));
-        }
-        catch (RuntimeException ex)
-        {
-            System.err.println("Student with ID ["+studentId+"] not found.");
+        } catch (RuntimeException ex) {
+            System.err.println("Student with ID [" + studentId + "] not found.");
         }
         return result;
     }

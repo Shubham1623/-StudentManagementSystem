@@ -1,6 +1,5 @@
 package com.studentapp;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -27,7 +26,7 @@ public class Student {
 
 
     public void enrollCourse(String course) {
-        if(validateCourseName(course)) {
+        if (validateCourseName(course)) {
             if (!courses.contains(course)) {
                 courses.add(course);
                 System.out.println("Student is enrolled to " + course + " successfully!!");
@@ -82,14 +81,10 @@ public class Student {
         }
     }
 
-    public boolean validateCourseName(String course)
-    {
-        if(course.equalsIgnoreCase("JAVA")||course.equalsIgnoreCase("DSA")||course.equalsIgnoreCase("Python"))
-        {
+    public boolean validateCourseName(String course) {
+        if (course.equalsIgnoreCase("JAVA") || course.equalsIgnoreCase("DSA") || course.equalsIgnoreCase("Python")) {
             return true;
-        }
-        else
-        {
+        } else {
             System.err.println("Invalid Course Name !!! Please select courses from the list [Java, DSA, Python]");
             return false;
         }
